@@ -383,7 +383,7 @@ def reset():
 	canvas.delete(scoreText)
 	scoreText = canvas.create_text(480, 650-square/2, text=f'Items bought: {score}/{len(createdBoxes)}', font=font)
 	canvas.create_rectangle(winx-square, winy-square, winx, winy, fill='#089E17')
-	dollarImg = ImageTk.PhotoImage(Image.open('dollar.png'))
+	dollarImg = ImageTk.PhotoImage(Image.open('./assets/dollar.png'))
 	canvas.create_image(winx-square/2,winy-square/2,image=dollarImg, anchor='center')
 	canvas.create_text(150, 650-square/2, text='Struggling Shoppers', font=font)
 	canvas.update()
@@ -393,9 +393,9 @@ def createObstacles(min, max):
 	global createdBoxes, createdWalls, me, headphones, monitor, watch
 	amount = random.randint(min, max)
 	
-	headphones = ImageTk.PhotoImage(Image.open('headphones.png'))
-	monitor = ImageTk.PhotoImage(Image.open('monitor.png'))
-	watch = ImageTk.PhotoImage(Image.open('watch.png'))
+	headphones = ImageTk.PhotoImage(Image.open('./assets/headphones.png'))
+	monitor = ImageTk.PhotoImage(Image.open('./assets/monitor.png'))
+	watch = ImageTk.PhotoImage(Image.open('./assets/watch.png'))
 	images = [headphones, monitor, watch]
 	
 	for i in range(amount):
@@ -456,9 +456,9 @@ def createObstacles(min, max):
 def createLevel(levelBoxes=[], levelWalls=[]):
 	"""given coordinates, creates a level"""
 	global headphones, monitor, watch, images, inmenu
-	headphones = ImageTk.PhotoImage(Image.open('headphones.png'))
-	monitor = ImageTk.PhotoImage(Image.open('monitor.png'))
-	watch = ImageTk.PhotoImage(Image.open('watch.png'))
+	headphones = ImageTk.PhotoImage(Image.open('./assets/headphones.png'))
+	monitor = ImageTk.PhotoImage(Image.open('./assets/monitor.png'))
+	watch = ImageTk.PhotoImage(Image.open('./assets/watch.png'))
 	images = [headphones, monitor, watch]
 	canvas.delete('all')
 	for i in levelBoxes:
@@ -539,18 +539,18 @@ def createMenu():
 	)
 	title = canvas.create_text(size/2, 100, text='Struggling Shoppers', font=font, justify='center')
 	description = canvas.create_text(300, 200, text='It\'s Black Friday!\nBuy the tech products by pushing them into the dollar sign.\nBe careful to not make mistakes! \n\nControls:\nPress ENTER to restart.\nUse WASD or arrow keys to move.\nPress P to generate a new level.\nPress backspace to return to this menu.', font=('Inter', 12), justify='center')
-	shoppingcartImg = ImageTk.PhotoImage(Image.open('shoppingcart.png'))
+	shoppingcartImg = ImageTk.PhotoImage(Image.open('./assets/shoppingcart.png'))
 	shoppingcartSquare = canvas.create_rectangle(140, 300, 140+square, 300+square, fill='#c1d2db')
 	shoppingcartMenu = canvas.create_image(140+square/2,300+square/2,image=shoppingcartImg, anchor='center')
 	arrow1 = canvas.create_line(200, 320, 280, 320, width='3', arrow=tkinter.LAST)
 
-	headphones = ImageTk.PhotoImage(Image.open('headphones.png'))
+	headphones = ImageTk.PhotoImage(Image.open('./assets/headphones.png'))
 	boxMenu = canvas.create_rectangle(300, 300, 300+square, 300+square, fill=boxColour)
 	createdImage = canvas.create_image(300+square/2,300+square/2,image=headphones, anchor='center')
 	arrow2 = canvas.create_line(360, 320, 440, 320, width='3', arrow=tkinter.LAST)
 
 	dollarbox = canvas.create_rectangle(460, 300, 460+square, 300+square, fill='#089E17')
-	dollarImg = ImageTk.PhotoImage(Image.open('dollar.png'))
+	dollarImg = ImageTk.PhotoImage(Image.open('./assets/dollar.png'))
 	dollarMenu = canvas.create_image(460+square/2,300+square/2,image=dollarImg, anchor='center')
 
 	among = canvas.create_text(size/2, 450, text='Press 1, 2, or 3 to start a new level', font=font, justify='center')
@@ -574,11 +574,11 @@ def game(level=None):
 
 	me = canvas.create_rectangle(0, 0, square, square, fill='#c1d2db')
 
-	shoppingcartImg = ImageTk.PhotoImage(Image.open('shoppingcart.png'))
+	shoppingcartImg = ImageTk.PhotoImage(Image.open('./assets/shoppingcart.png'))
 	shoppingcart = canvas.create_image(square/2,square/2,image=shoppingcartImg, anchor='center')
 
 	canvas.create_rectangle(winx-square, winy-square, winx, winy, fill='#089E17')
-	dollarImg = ImageTk.PhotoImage(Image.open('dollar.png'))
+	dollarImg = ImageTk.PhotoImage(Image.open('./assets/dollar.png'))
 	dollar = canvas.create_image(winx-square/2,winy-square/2,image=dollarImg, anchor='center')
 	totalBoxes = len(boxes)
 	scoreText = canvas.create_text(470, 650-square/2, text=f'Items bought: {score}/{totalBoxes}', font=font)
