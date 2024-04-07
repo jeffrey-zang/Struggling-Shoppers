@@ -1,0 +1,8 @@
+.cache
+.config
+.upm
+.breakpoints
+.replit
+pyproject.toml
+replit_zip
+replit.nix
